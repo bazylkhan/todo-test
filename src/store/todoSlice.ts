@@ -3,7 +3,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 type Todo = {
     id: string,
     text: string,
-    description: string,
+    description?: string,
     status: string
 }
 type TodosState = {

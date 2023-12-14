@@ -1,6 +1,6 @@
 interface NewTodoFormProps {
     valueTask: string,
-    valueDescription: string,
+    valueDescription?: string,
     updateText: (str: string) => void,
     updateDescription: (str: string) => void,
     handleAction: () => void

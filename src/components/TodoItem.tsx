@@ -5,7 +5,7 @@ import {toggleComplete, removeTodo} from '../store/todoSlice';
 interface TodoItemProps {
     id: string,
     text: string,
-    description: string,
+    description?: string,
     status: string
 }
 
