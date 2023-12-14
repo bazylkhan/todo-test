@@ -12,10 +12,10 @@ export const api = createApi({
         baseUrl: '/example'
     }),
     endpoints: (builder) => ({
-        fetchCompletedTasks: builder.query<Task[], void>({
+        fetchDoneTasks: builder.query<Task[], void>({
             query: () => '/tasks/done',
         }),
     }),
 });
 
-export const { useFetchCompletedTasksQuery } = api;
+export const { useFetchDoneTasksQuery } = api;
