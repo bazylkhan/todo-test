@@ -26,7 +26,7 @@ const TodoList: React.FC = () => {
     return (
         <>
             <div>
-                Фильтр
+                <div className={"filterTitle"}>Фильтр</div>
                 <select value={filterValue} onChange={filterHandler}>
                     <option value="onHold">Ожидание</option>
                     <option value="inWork">В работе</option>
@@ -34,11 +34,15 @@ const TodoList: React.FC = () => {
                     <option value="all">Все</option>
                 </select>
             </div>
-            <ul>
-                {selectedList().map(todo => (
-                    <TodoItem key={todo.id} {...todo} />
-                ))}
-            </ul>
+            {
+                selectedList().length > 0 ?
+                    <ul className={"TodoList"}>
+                        {selectedList().map(todo => (
+                            <TodoItem key={todo.id} {...todo} />
+                        ))}
+                    </ul>
+                    : 'Пусто'
+            }
         </>
     );
 };

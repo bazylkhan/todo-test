@@ -1,8 +1,13 @@
 .App {
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 20px;
 }
 
 ul {
+    padding: 0;
     list-style: none;
 }
 
@@ -12,12 +17,95 @@ li {
     align-items: center;
     gap: 0.5rem;
 }
-
 input:checked + span {
     text-decoration: line-through;
 }
 
-span:last-child {
+.delete {
     color: red;
     cursor: pointer;
+    border: 1px solid red;
+    padding: 5px;
+    font-weight: bold;
+}
+
+
+.newTodoForm-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.newTodoForm-wrapper input {
+    margin-bottom: 10px;
+}
+
+.TodoList{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    padding: 10px;
+    margin-top: 10px;
+}
+select{
+    border: 1px solid black;
+    border-radius: 0;
+    outline: none;
+}
+.TodoItem{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 10px;
+}
+.TodoItem:not(:last-child) {
+    border-bottom: 1px solid black;
+}
+
+.TodoItem-inner {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+.TodoItem-inner span{
+    width: fit-content;
+    margin-bottom: 5px;
+    border: 1px solid black;
+}
+
+.TodoItem-inner .TodoItem-title,.TodoItem-description{
+    border-bottom: 1px solid black;
+    margin-bottom: 3px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    overflow-wrap: anywhere;
+    min-width: 380px;
+    max-width: 700px;
+    padding: 5px;
+}
+.TodoItem-description.hidden{
+    display: none;
+}
+button {
+    border: none;
+    background: orangered;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 0;
+    cursor: pointer;
+}
+
+.Counter{
+    margin: 10px 0;
+    padding: 10px 0;
+    color: blueviolet;
+    font-weight: bold;
+}
+.filterTitle{
+    display: inline-block;
+    margin-right: 10px;
 }

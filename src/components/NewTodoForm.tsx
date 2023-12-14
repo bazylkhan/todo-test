@@ -8,7 +8,7 @@ interface NewTodoFormProps {
 
 const NewTodoForm: React.FC<NewTodoFormProps> = ({ valueTask, valueDescription, updateText,updateDescription, handleAction }) => {
     return (
-        <div>
+        <div className={'newTodoForm-wrapper'}>
             <input
                 placeholder='task title'
                 value={valueTask}

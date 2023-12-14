@@ -19,3 +19,9 @@ export const api = createApi({
 });
 
 export const { useFetchDoneTasksQuery } = api;
+
+
+// export const fetchDataAsync = createAsyncThunk('data/fetchData', async () => {
+//     const response = await useFetchDoneTasksQuery().unwrap();
+//     return response;
+// });

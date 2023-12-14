@@ -17,21 +17,23 @@ const TodoItem: React.FC<TodoItemProps> = ({ id, text, description, status }) =>
     };
 
     return (
-        <li>
+        <li className={"TodoItem"}>
             <select value={status} onChange={handleSelectChange}>
                 <option value="onHold">Ожидание</option>
                 <option value="inWork">В работе</option>
                 <option value="done">Выполнено</option>
             </select>
-            <div>
-                <div>
-                    <span>{text}</span>
+            <div className={"TodoItem-inner"}>
+                <div className={"TodoItem-title"}>
+                    <span>Title:</span>
+                    <div>{text}</div>
                 </div>
-                <div>
-                    <span>{description}</span>
+                <div className={`TodoItem-description ${description === '' ? "hidden":null}`}>
+                    <span>Description:</span>
+                    <div>{description}</div>
                 </div>
             </div>
-            <span onClick={() => dispatch(removeTodo(id))}>&times;</span>
+            <div className={'delete'} onClick={() => dispatch(removeTodo(id))}>&times;</div>
         </li>
     );
 };

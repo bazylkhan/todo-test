@@ -8,7 +8,7 @@ const Counter: React.FC = () => {
     })
 
     return (
-        <div>
+        <div className={"Counter"}>
             Выполнено {doneSum.length} из {todos.length}
         </div>
     );
