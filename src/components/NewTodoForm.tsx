@@ -1,19 +1,26 @@
 interface NewTodoFormProps {
-    value: string,
+    valueTask: string,
+    valueDescription: string,
     updateText: (str: string) => void,
+    updateDescription: (str: string) => void,
     handleAction: () => void
 }
 
-const NewTodoForm: React.FC<NewTodoFormProps> = ({ value, updateText, handleAction }) => {
+const NewTodoForm: React.FC<NewTodoFormProps> = ({ valueTask, valueDescription, updateText,updateDescription, handleAction }) => {
     return (
-        <label>
+        <div>
             <input
-                placeholder='add todo'
-                value={value}
+                placeholder='task title'
+                value={valueTask}
                 onChange={(e) => updateText(e.target.value)}
             />
+            <input
+                placeholder='description'
+                value={valueDescription}
+                onChange={(e) => updateDescription(e.target.value)}
+            />
             <button onClick={handleAction}>Add task</button>
-        </label>
+        </div>
     );
 };
 

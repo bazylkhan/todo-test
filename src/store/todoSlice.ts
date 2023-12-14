@@ -3,6 +3,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 type Todo = {
     id: string,
     text: string,
+    description: string,
     status: string
 }
 type TodosState = {
@@ -17,10 +18,11 @@ const todoSlice = createSlice({
     name: 'todos',
     initialState,
     reducers: {
-        addTodo(state, action: PayloadAction<string>) {
+        addTodo(state, action: PayloadAction<{ text: string, description: string }>) {
             state.list.push({
                 id: new Date().toISOString(),
-                text: action.payload,
+                text: action.payload.text,
+                description: action.payload.description,
                 status: 'inWork',
             });
         },

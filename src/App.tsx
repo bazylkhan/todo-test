@@ -9,23 +9,27 @@ import Counter from "./components/Counter";
 
 function App() {
   const [text, setText] = useState('');
+  const [description, setDescription] = useState('');
   const dispatch = useAppDispatch();
 
   const handleAction = () => {
-    if(text.trim().length) {
-      dispatch(addTodo(text));
+    if(text.trim().length && text.length <= 30) {
+      dispatch(addTodo({text, description}));
       setText('');
+      setDescription('');
     }
   }
 
   return (
       <div className='App'>
         <NewTodoForm
-            value={text}
+            valueTask={text}
+            valueDescription = {description}
             updateText={setText}
+            updateDescription={setDescription}
             handleAction={handleAction}
         />
-          <Counter />
+        <Counter />
         <TodoList />
       </div>
   );
